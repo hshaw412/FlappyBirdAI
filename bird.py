@@ -5,7 +5,7 @@ class Bird:
         self.screen = screen
         self.pos = pygame.Vector2(self.screen.get_width()/3, self.screen.get_height()/2)
         self.velocity = pygame.Vector2(0,0)
-        self.gravity = 550
+        self.gravity = 1000
         self.color = color
 
     def show(self):
@@ -14,7 +14,7 @@ class Bird:
         pygame.draw.circle(self.screen, self.color, self.pos, 30)
 
     def flap(self):
-        self.velocity.y = -250
+        self.velocity.y = -300
 
     def updatePose(self, framerate):
         self.pos.y += self.velocity.y / framerate
